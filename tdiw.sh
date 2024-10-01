@@ -1,8 +1,13 @@
 #!/bin/bash
 set -e
 
-# Removing a previous tdiw-php docker
-docker rm -f tdiw-php
+# Removing a previous tdiw docker
+TDIW_DOCKERS=$(docker ps -a -q -f name=tdiw)
+if [ ! -z "${TDIW_DOCKERS}" ]
+then
+    echo "Removing a previous tdiw docker"
+    docker rm -f $TDIW_DOCKERS
+fi
 
 # Create Dockerfile
 cat <<EOF > Dockerfile
@@ -20,6 +25,7 @@ EOF
 docker build -t apache-php-pdo_pgsql .
 
 # Docker with apache-php-pdo_pgsql
+echo "Creating tdiw containers"
 docker run -d --name tdiw-php --network="host" -v "$PWD":/var/www/html apache-php-pdo_pgsql:latest
 
 # Remove Dockerfile
