@@ -52,11 +52,11 @@ To destroy the tdiw containers, run the following commands:
 docker rm -f tdiw-php
 ```
 
-## Destroy all running containers
+## Destroy all running TDIW containers
 > [!CAUTION]
-> This will remove all your running docker containers. Be careful if you really want to apply this.
+> This will remove all your running and stop TDIW docker containers.
 ```shell
-docker rm -v -f $(docker ps -q)
+docker rm -v -f $(docker ps -a -q -f name=tdiw)
 ```
 
 ## Access to the website
