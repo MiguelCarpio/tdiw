@@ -20,7 +20,7 @@ sudo dnf install git -y
 
 ### Install docker
 In this session and the following, we must run containers to perform and test the exercises.
-For our environment, we recommended using docker containers. You can install it with https://docs.docker.com/engine/install/ or use the following script https://github.com/docker/docker-install.git.
+For our environment, we recommended using docker containers. You can install it with https://docs.docker.com/engine/install/ or use the following script https://github.com/docker/docker-install.git
 ```shell
 git clone https://github.com/docker/docker-install.git
 cd docker-install/
@@ -54,7 +54,7 @@ docker rm -f tdiw-php
 
 ## Destroy all running TDIW containers
 > [!CAUTION]
-> This will remove all your running and stop TDIW docker containers.
+> This will remove all your running and stop TDIW docker containers
 ```shell
 docker rm -v -f $(docker ps -a -q -f name=tdiw)
 ```
