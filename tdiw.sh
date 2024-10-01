@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# Removing a previous tdiw docker
+# Removing previous tdiw dockers
 TDIW_DOCKERS=$(docker ps -a -q -f name=tdiw)
 if [ ! -z "${TDIW_DOCKERS}" ]
 then
