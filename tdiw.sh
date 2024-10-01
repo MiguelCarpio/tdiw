@@ -10,6 +10,7 @@ then
 fi
 
 # Create Dockerfile
+echo ""
 cat <<EOF > Dockerfile
 FROM php:8.3-apache
 
@@ -25,6 +26,7 @@ EOF
 docker build -t apache-php-pdo_pgsql .
 
 # Docker with apache-php-pdo_pgsql
+echo ""
 echo "Creating tdiw containers"
 docker run -d --name tdiw-php --network="host" -v "$PWD":/var/www/html apache-php-pdo_pgsql:latest
 
