@@ -47,16 +47,10 @@ docker ps
 ```
 
 ## Destroy the environment
-To destroy the tdiw containers, run the following commands:
-```shell
-docker rm -f tdiw-php tdiw-db
-```
-
-## Destroy all running containers
 > [!CAUTION]
-> This will remove all your running docker containers. Be careful if you really want to apply this.
+> This will remove all your running and stop TDIW docker containers
 ```shell
-docker rm -v -f $(docker ps -q)
+docker rm -v -f $(docker ps -a -q -f name=tdiw)
 ```
 
 ## Query the DB
