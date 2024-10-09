@@ -42,7 +42,6 @@ To create the environment, just run the **tdiw.sh** script
 ```shell
 ./tdiw.sh
 ```
-
 > [!IMPORTANT]  
 > If you get an execute permissions error, run the following command line first and then the tdiw.sh
 ```shell
