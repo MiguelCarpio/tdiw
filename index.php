@@ -4,9 +4,21 @@
         <meta charset="utf-8"/>
         <title> UAB/Enginyeria </title>
         <link rel="stylesheet" type="text/css" href="css/uab.css">
-        <script src="js/funcions.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    	<script src="js/funcions.js"></script>
     </head>
     <body>
+        <?php
+		include_once __DIR__ . "/connectaBD.php";  
+		$connexio = connectaBD();
+		$sql_graus = "SELECT id,nom FROM graus";
+		$consulta_graus = pg_query($connexio, $sql_graus) or die("Error sql graus");
+		$resultat_graus = pg_fetch_all($consulta_graus);
+		$sql_mencions = "SELECT id,nom FROM mencions WHERE grau=1";
+      	$consulta_mencions = pg_query($connexio, $sql_mencions) or die("Error sql mencions");
+		$resultat_mencions = pg_fetch_all($consulta_mencions);
+      	pg_close($connexio);
+        ?>
         <div id="layout">
             <!-- SECCIÓ 1 - Capçalera -->
             <header style="grid-area: titol">
@@ -45,12 +57,20 @@
                         Nom complet: <input type="text" name="nom" /><br />
                         Password: <input type="password" name="clau" /><br />
                         Grau:
-                        <select name="grau" id="graus" onchange="carregaMencions();">
-                            <?php //completa; ?>
+                        <select name="grau" id="graus">
+                        <?php
+                            foreach($resultat_graus as $fila){
+                                echo "<option value='" . $fila['id'] . "'>" . $fila['nom'] . "</option>\n";
+                            }
+                        ?>
                         </select>
                         <p>Tria la menció que t'atreu més:<p>
                         <select name="mencio" id="mencions">
-                            <?php //completa; ?>
+                        <?php
+                                foreach($resultat_mencions as $fila){
+                                    echo "<option value='" . $fila['id'] . "'>" . $fila['nom'] . "</option>\n";
+                                }
+                        ?>
                         </select>
                         <br /><br />
                         <input type="submit" value="Registrar-me" />
