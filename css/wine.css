@@ -1,0 +1,50 @@
+#layout{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+#layout > header{
+  background-color: red;
+  text-align: center;
+}
+
+#layout > button{
+  width: 200px;
+  padding: 10px;
+}
+
+button.buy {
+  background-color: green;
+  color: white;
+}
+
+button.query{
+  background-color: orange;
+}
+
+button.cart, button.ok{
+  padding: 3px;
+  width: 30px;
+}
+
+button.cart img {
+  width: 20px;
+  padding: 0px;
+}
+
+p.add {
+  background-color: yellow;
+}
+
+p.query{
+  background-color: aquamarine;
+}
+
+div.message {
+  display: flex;
+  justify-content: start;
+}
+
+div.message > button {
+  margin-left: 5px;
+}
