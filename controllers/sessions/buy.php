@@ -9,5 +9,5 @@
 
   array_push($_SESSION['cart'], $wineToBuy);
 
-  include_once __DIR__."/../../views/sessions/buy.php";
+  include_once __DIR__."/../../views/buy.php";
 ?>

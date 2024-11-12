@@ -1,10 +1,14 @@
 <?php
 if(count($products) > 0){
   foreach ($products as $product) {
-    echo "<p>$product</p>";
-  }
-}else{
-  echo "The cart is empty";
-}
 ?>
-<button onclick="clearCart()">Go back shopping</button>
+<p><?= $product?> </p>
+<?php
+  } //end if
+}else{
+?>
+  <p>The cart is empty</p>
+<?
+} //end else
+?>
+<button onclick="clearMessage()">Go back shopping</button>

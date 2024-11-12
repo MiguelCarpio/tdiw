@@ -11,11 +11,10 @@
   <div id="layout">
   <header><h1>Bons vins</h1></header>
   <button class="buy" onclick="buy('rioja')">Buy Rioja</button>
-  <button class="query" onclick="info('penedes')">Info Penedés</button>
   <button class="buy" onclick="buy('penedes')">Buy Penedés</button>
+  <button class='cart' onClick='cart()'><img src='resources/img/cart.jpg'></button></img>
   <div class="message" id="message"></div>
   </div>
-  <div class="cart" id="cart"></div>
-  </div>
+
 </body>
 </html>
