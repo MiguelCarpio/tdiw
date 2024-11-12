@@ -34,17 +34,35 @@ cd docker-install/
 >su - ${USER} #You must start a new session to see the change
 >```
 
-## Create the environment
-In this repository, you can find the **tdiw.sh** script, which will create two containers, one with Apache + PHP service and another with PostgreSQL DB, and the data needed to perform the P8 exercise. 
+## Manage the environment
+
+### Create the containers
+In this repository, you can find the **tdiw.sh** script, which will create an Apache + PHP service to perform the P8 exercise. 
 To create the environment, just run the **tdiw.sh** script
 ```shell
 ./tdiw.sh
 ```
 
-## Destroy the environment
-To destroy the tdiw containers, run the following commands:
+### List the running containers
 ```shell
-docker rm -f tdiw-php
+docker ps
+```
+
+### Stop the containers
+```shell
+docker stop $(docker ps -a -q -f name=tdiw)
+```
+
+### Start the containers
+```shell
+docker start $(docker ps -a -q -f name=tdiw)
+```
+
+### Destroy the environment
+> [!CAUTION]
+> This will remove all your running and stop TDIW docker containers
+```shell
+docker rm -v -f $(docker ps -a -q -f name=tdiw)
 ```
 
 ## Access to the website
