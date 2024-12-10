@@ -1,0 +1,16 @@
+#main{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#main > #left{
+  display:flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 10px;
+} 
+
+#main > #left > button{
+  margin:5px;
+}

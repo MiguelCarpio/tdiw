@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/users.css">
+  <script src="js/users.js"></script>
+  <title>Users Management Tool</title>
+</head>
+<body>
+  <h2>Users Database Client</h2>
+  <div id="main">
+    <div id="left">
+      <button onclick="getUsers()">GetUsers</button>
+      <button onclick="addUser('Alice', 23)">Add Alice</button>
+      <button onclick="modifyUser(3, 'Alice', 15)">Modify user Alice. Set age to 15.</button>
+      <button onclick="deleteUser(3)">Delete Alice</button>
+    </div>
+    <div id="right">
+
+    </div>
+
+  </div>
+</body>
+</html>
