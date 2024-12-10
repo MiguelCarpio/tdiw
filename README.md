@@ -1,7 +1,7 @@
 # TDIW Problems & Solutions
 Tecnologies de desenvolupament per a Internet i Web / Problems and Solutions
 
-SESSIÓ DE PROBLEMES 11 – Protocols de Serveis: Serveis Web i  Correu electrònic.
+SESSIÓ DE PROBLEMES 11 – Representational state transfer (REST)
 
 ## Requirements
 ### Operating System
